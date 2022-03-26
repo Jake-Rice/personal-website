@@ -15,3 +15,16 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+//Hamburger menu and navbar animation
+const menuBtn = document.querySelector('.hamburger-btn');
+let menuOpen = false;
+menuBtn.addEventListener('click', () => {
+  if (menuOpen) {
+    menuBtn.classList.remove('open');
+  }
+  else {
+    menuBtn.classList.add('open');
+  }
+  menuOpen = !menuOpen;
+});
