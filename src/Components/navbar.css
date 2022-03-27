@@ -8,9 +8,6 @@
     height: 50px;
     cursor: pointer;
 }
-.hamburger-btn:hover, .navbar-link:hover {
-    background-color: darkgray;
-}
 
 .hamburger-icon {
     width: 50px;
@@ -52,7 +49,9 @@
 .navbar {
     list-style: none;
     position: fixed;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -61,9 +60,78 @@
     background-color: black;
     transition: all 500ms ease-in-out;
 }
-.navbar-link {
-    width: 100%;
-    margin: 0;
+.navbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 576px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-decoration: none;
     color: white;
-    transition: all 350ms ease-in-out 150ms, transform 0ms 200ms, background-color 0ms;
+    height: auto;
+}
+.navbar-link {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+    height: 40px;
+    width: 100%;
+    transition: all 350ms ease-in-out 150ms, transform 0ms 200ms;
+}
+.navbar-item hr{
+    bottom: 0px;
+    height: 0px;
+    width: 0;
+    color: black;
+}
+.navbar-item:hover hr {
+    color: white;
+    width: 100px;
+    transition: width 300ms ease-in-out, color 0ms;
+}
+.navbar-spacer-left {
+    display: none;
+    width: 80px;
+}
+.navbar-spacer-bottom {
+    height: 60px;
+    width: 100%;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .hamburger-btn {
+        display: none;
+    }
+    .navbar-spacer-bottom {
+        display: none;
+    }
+    .navbar-item {
+        flex-basis: 120px;
+        flex-grow: 0;
+    }
+    .navbar {
+        height: 70px;
+        max-height: 70px;
+        top: 0;
+        bottom: auto;
+        justify-content: end;
+    }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
 }
